@@ -35,6 +35,13 @@
             bindings = <&kp LS(LC(A))>;
             label = "TOGGLE_MUTE_ROAM_APP";
         };
+
+        toggle_video_roam_app: toggle_video_roam_app {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(V))>;
+            label = "TOGGLE_VIDEO_ROAM_APP";
+        };
     };
 
     keymap {
@@ -43,7 +50,7 @@
         default_layer {
             bindings = <
 &none        &mo 1     &mo 1       &none
-&select_all  &copy     &paste      &kp M
+&select_all  &copy     &paste      &toggle_video_roam_app
 &kp C_PREV   &kp C_PP  &kp C_NEXT  &toggle_mute_roam_app
             >;
 
